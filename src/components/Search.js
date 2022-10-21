@@ -21,12 +21,19 @@ const Search = () => {
       setResults(response.data.query.search)
     }
 
-    setTimeout(() => {
+    if (term && !results.length) {
+      search()
+    } else {
+    const timeOutId = setTimeout(() => {
       if (term) {
         search();
       }
-    }, 500 )
-  }, [term])
+    }, 1000 )
+
+    return () => {
+      clearTimeout(timeOutId)
+    }
+  }}, [term])
 
   const renderedResults = results.map(result => {
     console.log(result)
