@@ -16,7 +16,15 @@ const Convert = ({ text, language }) => {
       setTranslated(resp.data.data.translations[0].translatedText)
     }
 
-    doTranslation();
+    if (text) {
+      const timeOudId = setTimeout(() => {
+        doTranslation();
+      }, 5000)
+  
+      return () => {
+        clearTimeout(timeOudId)
+      }
+    }
   }, [language, text])
 
   return (
