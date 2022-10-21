@@ -30,6 +30,12 @@ const Search = () => {
     console.log(result)
     return (
       <div className="item" key={result.pageid}>
+        <div className="right floated content">
+          <a 
+          href={`https://en.wikipedia.org?curid=${result.pageid}`}
+          className="ui button"
+          >Go</a>
+        </div>
         <div className="content">
           <div className="header">
             {result.title}
