@@ -37,10 +37,13 @@ export default () => {
   const [selected, setSelected] = useState(options[0]);
 
   return <div>
+
     <Dropdown 
+      showDrop
       options={options}
       selected={selected}
       onSelectedChange={setSelected}
-    />
+    /> 
+
   </div>
 }; 
