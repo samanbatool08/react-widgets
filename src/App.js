@@ -1,5 +1,8 @@
 import React from 'react'; 
+import Accordion from './components/Accordion';
 
 export default () => {
-  return <div>App</div>
+  return <div>
+    <Accordion />
+  </div>
 }; 
