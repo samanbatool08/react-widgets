@@ -20,11 +20,14 @@ const Search = () => {
       })
       setResults(response.data.query.search)
     }
-    search();
+
+    if (term) {
+      search();
+    }
   }, [term])
 
   const renderedResults = results.map(result => {
-
+    console.log(result)
     return (
       <div className="item" key={result.pageid}>
         <div className="content">
